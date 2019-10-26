@@ -1,12 +1,12 @@
 let input = document.getElementsByTagName("input");
-let poid = document.getElementById("poid");
+let poids = document.getElementById("poids");
 let taille = document.getElementById("taille");
 let valeur = document.getElementById("valeur");
 let triangle = document.getElementById("triangle");
 let bonhomme = document.getElementById("bonhomme");
 
-function calculImc(poid, taille) {
-    return poid/(taille^2); 
+function calculImc(poids, taille) {
+    return poids/(taille^2); 
 }
 
 let valeurTaille;
@@ -27,7 +27,7 @@ for (let i = 0; i < input.length; i++) {
 
        
 
-        let imc = calculImc(poid.value, valeurTaille);
+        let imc = calculImc(poids.value, valeurTaille);
 
         switch (true) {
             case imc<16.5:
@@ -68,11 +68,11 @@ for (let i = 0; i < input.length; i++) {
 
         /* */
 
-        if(poid.value == 0) {
-            poid.style.borderColor = "red";
-            valeur.innerHTML = "vous devez remplir la case poid";
+        if(poids.value == 0) {
+            poids.style.borderColor = "red";
+            valeur.innerHTML = "vous devez remplir la case poids";
         } else {
-            poid.style.borderColor = "#2bd887";
+            poids.style.borderColor = "#2bd887";
         }
 
         if(taille.value == 0) {
@@ -82,10 +82,10 @@ for (let i = 0; i < input.length; i++) {
             taille.style.borderColor = "#2bd887";
         }
 
-        if(poid.value == 0 && taille.value == 0) {
-            poid.style.borderColor = "red";
+        if(poids.value == 0 && taille.value == 0) {
+            poids.style.borderColor = "red";
             taille.style.borderColor = "red";
-            valeur.innerHTML = "vous devez remplir la case poid et la case taille";
+            valeur.innerHTML = "vous devez remplir la case poids et la case taille";
         }
 
         /*    */
@@ -103,10 +103,10 @@ for (let i = 0; i < input.length; i++) {
     })
 }
 
-if(poid.value == 0 && taille.value == 0) {
-    poid.style.borderColor = "red";
+if(poids.value == 0 && taille.value == 0) {
+    poids.style.borderColor = "red";
     taille.style.borderColor = "red";
-    valeur.innerHTML = "vous devez remplir la case poid et la case taille";
+    valeur.innerHTML = "vous devez remplir la case poids et la case taille";
 }
 
 
