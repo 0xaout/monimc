@@ -34,51 +34,49 @@ for (let i = 0; i < input.length; i++) {
             
         }
 
-       
-
         let imc = calculImc(poids.value, valeursTaille);
 
         switch (true) {
             case imc<16.5:
-                setColor("255, 0, 0", "0.2");
+                setColor("252, 111, 111", "0.2");
                 valeurs.innerHTML = "IMC: " + imc + " <br> Anorexie.";
                 bonhomme.setAttribute("r", 10);
                 
                 break;
         
             case imc>=16.5 && imc<=18.5:
-                setColor("219, 128, 59", "0.2");
+                setColor("247, 184, 116", "0.2");
                 valeurs.innerHTML = "IMC: "+ imc + "<br> Maigreur.";
                 bonhomme.setAttribute("r", 20);
                 break;
             
             case imc>=18.5 && imc<=25:
-                setColor("237, 237, 64", "0.2");
+                setColor("136, 216, 176", "0.2");
                 valeurs.innerHTML = "IMC: "+ imc + " <br> Poids normal.";
                 bonhomme.setAttribute("r", 30);
                 break;
         
             case imc>=25 && imc<=30:
-                setColor("43, 216, 135", "0.2");
+                setColor("69, 200, 204", "0.2");
                 valeurs.innerHTML = "IMC: "+ imc +"<br> Surpoids.";
                 bonhomme.setAttribute("r", 40);
                 break;
         
             case imc>=30 && imc<=35:
-                setColor("43, 43, 216", "0.2");
+                setColor("69, 134, 204", "0.2");
                 valeurs.innerHTML = "IMC: "+ imc + "<br> Obésité sévère.";
                 bonhomme.setAttribute("r", 50);
                 break;
 
             case imc>=35 && imc<=40:
-                setColor("0, 0, 0", "0.2");
+                setColor("54, 71, 181", "0.2");
                 valeurs.innerHTML = "IMC: "+ imc + "<br> Obésité sévère.";
                 bonhomme.setAttribute("r", 60);
                 break;
         
             case imc>=40:
-                setColor("71, 22, 114", "0.2");
-                valeurs.innerHTML = "IMC: "+ imc + "<br> Obésité morbite.";
+                setColor("74, 40, 122", "0.2");
+                valeurs.innerHTML = "IMC: "+ imc + "<br> Obésité morbide.";
                 bonhomme.setAttribute("r", 70);
                 break;
         }
