@@ -1,7 +1,7 @@
 let input = document.getElementsByTagName("input");
 let poids = document.getElementById("poids");
 let taille = document.getElementById("taille");
-let valeur = document.getElementById("valeur");
+let valeurs = document.getElementById("valeurs");
 let triangle = document.getElementById("triangle");
 let bonhomme = document.getElementById("bonhomme");
 
@@ -9,59 +9,74 @@ function calculImc(poids, taille) {
     return poids/(taille^2); 
 }
 
-let valeurTaille;
+let valeurssTaille;
 
 for (let i = 0; i < input.length; i++) {
     input[i].addEventListener("keyup", function() {
 
         if(document.getElementsByClassName("fin")[0].value == "cm") {
             console.log("cm");
-            valeurTaille = taille.value/100;
-            console.log(valeurTaille);
+            valeursTaille = taille.value/100;
+            console.log(valeursTaille);
             
             
         } else {
-            valeurTaille = taille.value;
+            valeursTaille = taille.value;
             
         }
 
        
 
-        let imc = calculImc(poids.value, valeurTaille);
+        let imc = calculImc(poids.value, valeursTaille);
 
         switch (true) {
             case imc<16.5:
-                valeur.innerHTML = "IMC: " + imc + " <br> Anorexie.";
+                valeurs.style.border = "2px solid rgba(255, 0, 0, 1)";
+                valeurs.style.background = "rgba(255, 0, 0, 0.2)";
+                valeurs.innerHTML = "IMC: " + imc + " <br> Anorexie.";
                 bonhomme.setAttribute("r", 10);
+                
                 break;
         
             case imc>=16.5 && imc<=18.5:
-                valeur.innerHTML = "IMC: "+ imc + "<br> Maigreur.";
+                valeurs.style.border = "2px solid rgba(219, 128, 59, 1)";
+                valeurs.style.background = "rgba(219, 128, 59, 0.2)";
+                valeurs.innerHTML = "IMC: "+ imc + "<br> Maigreur.";
                 bonhomme.setAttribute("r", 20);
                 break;
             
             case imc>=18.5 && imc<=25:
-                valeur.innerHTML = "IMC: "+ imc + " <br> Poids normal.";
+                valeurs.style.border = "2px solid rgba(237, 237, 64, 1)";
+                valeurs.style.background = "rgba(237, 237, 64, 0.2)";
+                valeurs.innerHTML = "IMC: "+ imc + " <br> Poids normal.";
                 bonhomme.setAttribute("r", 30);
                 break;
         
             case imc>=25 && imc<=30:
-                valeur.innerHTML = "IMC: "+ imc +"<br> Surpoids.";
+                valeurs.style.border = "2px solid rgba(43, 216, 135, 1)";
+                valeurs.style.background = "rgba(43, 216, 135, 0.2)";
+                valeurs.innerHTML = "IMC: "+ imc +"<br> Surpoids.";
                 bonhomme.setAttribute("r", 40);
                 break;
         
             case imc>=30 && imc<=35:
-                valeur.innerHTML = "IMC: "+ imc + "<br> Obésité sévère.";
+                valeurs.style.border = "2px solid rgba(43, 43, 216, 1)";
+                valeurs.style.background = "rgba(43, 43, 216, 0.2)";
+                valeurs.innerHTML = "IMC: "+ imc + "<br> Obésité sévère.";
                 bonhomme.setAttribute("r", 50);
                 break;
 
             case imc>=35 && imc<=40:
-                valeur.innerHTML = "IMC: "+ imc + "<br> Obésité sévère.";
+                valeurs.style.border = "2px solid rgba(0, 0, 0, 1)";
+                valeurs.style.background = "rgba(0, 0, 0, 0.2)";
+                valeurs.innerHTML = "IMC: "+ imc + "<br> Obésité sévère.";
                 bonhomme.setAttribute("r", 60);
                 break;
         
             case imc>=40:
-                valeur.innerHTML = "IMC: "+ imc + "<br> Obésité morbite.";
+                valeurs.style.border = "2px solid rgba(71, 22, 114, 1)";
+                valeurs.style.background = "rgba(71, 22, 114, 0.2)";
+                valeurs.innerHTML = "IMC: "+ imc + "<br> Obésité morbite.";
                 bonhomme.setAttribute("r", 70);
                 break;
         }
@@ -70,14 +85,18 @@ for (let i = 0; i < input.length; i++) {
 
         if(poids.value == 0) {
             poids.style.borderColor = "red";
-            valeur.innerHTML = "vous devez remplir la case poids";
+            valeurs.innerHTML = "vous devez remplir la case poids";
+            valeurs.style.border = "2px solid rgba(255, 0, 0, 1)";
+            valeurs.style.background = "rgba(255, 0, 0, 0.2)";
         } else {
             poids.style.borderColor = "#2bd887";
         }
 
         if(taille.value == 0) {
             taille.style.borderColor = "red";
-            valeur.innerHTML = "vous devez remplir la case taille";
+            valeurs.innerHTML = "vous devez remplir la case taille";
+            valeurs.style.border = "2px solid rgba(255, 0, 0, 1)";
+            valeurs.style.background = "rgba(255, 0, 0, 0.2)";
         } else {
             taille.style.borderColor = "#2bd887";
         }
@@ -85,7 +104,9 @@ for (let i = 0; i < input.length; i++) {
         if(poids.value == 0 && taille.value == 0) {
             poids.style.borderColor = "red";
             taille.style.borderColor = "red";
-            valeur.innerHTML = "vous devez remplir la case poids et la case taille";
+            valeurs.innerHTML = "vous devez remplir la case poids et la case taille";
+            valeurs.style.border = "2px solid rgba(255, 0, 0, 1)";
+            valeurs.style.background = "rgba(255, 0, 0, 0.2)";
         }
 
         /*    */
@@ -106,7 +127,9 @@ for (let i = 0; i < input.length; i++) {
 if(poids.value == 0 && taille.value == 0) {
     poids.style.borderColor = "red";
     taille.style.borderColor = "red";
-    valeur.innerHTML = "vous devez remplir la case poids et la case taille";
+    valeurs.innerHTML = "vous devez remplir la case poids et la case taille";
+    valeurs.style.border = "2px solid rgba(255, 0, 0, 1)";
+    valeurs.style.background = "rgba(255, 0, 0, 0.2)";
 }
 
 

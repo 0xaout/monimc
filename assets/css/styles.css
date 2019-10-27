@@ -59,6 +59,9 @@ input {
 }
 
 .input:last-child {
+    
+    padding-bottom: var(--general-padding);
+    border-bottom: 2px solid var(--light-grey);
     margin-bottom: var(--general-padding);
 }
 
@@ -79,8 +82,8 @@ select {
     background: none;
 }
 
-#valeur {
-    border-top: 2px solid var(--light-grey);
-    padding-top: var(--general-padding);
-    width: 100%;;
+#valeurs {
+    
+    padding: 0.5rem;
+    
 }
