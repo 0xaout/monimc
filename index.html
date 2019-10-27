@@ -6,74 +6,70 @@
     </head>
 
     <body>
-        
-            <div id="element">
-                <h1>Calcul IMC.</h1>
+        <div id="row">
 
-                <div id="conteneur__1-1">
-                    <div id="formulaire">
-                        <form>
-                            <div class="input">
-                                <input type="text" id="taille" placeholder="Taille">
+            <h1>Calcul IMC.</h1>
 
-    
-                                <select class="fin">
-                                    <option>m</option>
-                                    <option>cm</option>
-                                </select>
-                              
-                            </div>
+            <div id="item">
+                <div id="formulaire">
+                    <form>
+                        <div class="input">
 
-                            <div class="input">
-                                <input type="text" id="poids" placeholder="Poids">
+                            <input type="text" id="taille" placeholder="Taille">
 
-                                <div class="fin">
-                                    kg
-                                </div>
-                            </div>
-
-                            <div id="valeur">
-
-                            </div>
-
-                            <div id="bonhomme">
-
-                            </div>
-                         
-                        </form> 
-                    </div>
-
-                    <div id="graphique">
-                        <svg width="100%" height="339">
-                                                       
-                            <rect x="0" y="0" width="100%" height="99" fill="#471672"/>
-                            <text x="0" y="12" font-size="12px" fill="#fff" opacity="0.7">>40</text>
-                                
-                            <rect x="0" y="99" width="100%" height="30" fill="#purple"/>
-                            <text x="0" y="111" font-size="12px" fill="#fff" opacity="0.7">>35 et <40</text>
+                            <select class="fin">
+                                <option>m</option>
+                                <option>cm</option>
+                            </select>
                 
-                            <rect x="0" y="129" width="100%" height="30" fill="#2b2bd8"/>
-                            <text x="0" y="141" font-size="12px" fill="#fff" opacity="0.7">>30 et <35</text>
+                        </div>
+
+                        <div class="input">
+
+                            <input type="text" id="poids" placeholder="Poids">
+
+                            <div class="fin">
+                                 kg
+                            </div>
+                            
+                        </div>
+
+                        <div id="valeur"></div>
+                        <div id="bonhomme"></div>
+                         
+                    </form> 
+                </div>
+
+                <div id="graphique">
+                    <svg width="100%" height="339">
+                                                       
+                        <rect x="0" y="0" width="100%" height="99" fill="#471672"/>
+                        <text x="0" y="12" font-size="12px" fill="#fff" opacity="0.7">>40</text>
                                 
-                            <rect x="0" y="159" width="100%" height="30" fill="#2bd887"/>
-                            <text x="0" y="171" font-size="12px" fill="#fff" opacity="0.7">>25 et <30</text>
+                        <rect x="0" y="99" width="100%" height="30" fill="#purple"/>
+                        <text x="0" y="111" font-size="12px" fill="#fff" opacity="0.7">>35 et <40</text>
+                
+                        <rect x="0" y="129" width="100%" height="30" fill="#2b2bd8"/>
+                        <text x="0" y="141" font-size="12px" fill="#fff" opacity="0.7">>30 et <35</text>
+                        
+                        <rect x="0" y="159" width="100%" height="30" fill="#2bd887"/>
+                        <text x="0" y="171" font-size="12px" fill="#fff" opacity="0.7">>25 et <30</text>
                                 
-                            <rect x="0" y="189" width="100%" height="39" fill="#eded40"/>
-                            <text x="0" y="201" font-size="12px" fill="#fff" opacity="0.7">>18.5 et <25</text>
+                        <rect x="0" y="189" width="100%" height="39" fill="#eded40"/>
+                        <text x="0" y="201" font-size="12px" fill="#fff" opacity="0.7">>18.5 et <25</text>
                                 
-                            <rect x="0" y="228" width="100%" height="12" fill="#db803b"/>
-                            <text x="0" y="240" font-size="12px" fill="#fff" opacity="0.7">>16.5 et <18.5</text>
+                        <rect x="0" y="228" width="100%" height="12" fill="#db803b"/>
+                        <text x="0" y="240" font-size="12px" fill="#fff" opacity="0.7">>16.5 et <18.5</text>
                                 
-                            <rect x="0" y="240" width="100%" height="99" fill="#d84343"/>
-                            <text x="0" y="252" font-size="12px" fill="#fff" opacity="0.7"><16.5</text>
+                        <rect x="0" y="240" width="100%" height="99" fill="#d84343"/>
+                        <text x="0" y="252" font-size="12px" fill="#fff" opacity="0.7"><16.5</text>
                                 
-                            <polygon id="triangle" points="1 329, 1 349, 21 339" fill="red" stroke="black" stroke-width="1"/>
+                        <polygon id="triangle" points="1 329, 1 349, 21 339" fill="red" stroke="black" stroke-width="1"/>
                                                    
-                        </svg>
-                    </div>
+                    </svg>
                 </div>
             </div>
-        
+        </div>
 
         <script src="assets/js/imc.js"></script>
 
