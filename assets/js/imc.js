@@ -5,29 +5,36 @@ let valeurs = document.getElementById("valeurs");
 let triangle = document.getElementById("triangle");
 let bonhomme = document.getElementById("bonhomme");
 
+/* s'occupe du calcul de l'imc */
 
 function calculImc(poids, taille) {
     return poids/(taille^2); 
 }
+
+/* fonction pour modifier la couleur de fond + la bordure plus simplement */
 
 function setColor(rgbaColor, opacity) {
     valeurs.style.border = "2px solid rgba(" + rgbaColor + ", 1)";
     valeurs.style.background = "rgba(" + rgbaColor + ", " + opacity + ")";
 }
 
+/* fonction qui s'occupe du programme en général, est appelée lorsque la page se charge, lorsqu'il y a un click et quand on relache une touche du clavier */
+
 function affichageImc() {
+
+    let imc;
+
     if(document.getElementsByClassName("fin")[0].value == "cm") {
-        console.log("cm");
-        valeursTaille = taille.value/100;
-        console.log(valeursTaille);
-        
+        imc = calculImc(poids.value, taille.value/100);
         
     } else {
-        valeursTaille = taille.value;
-        
+        imc = calculImc(poids.value, taille.value);
     }
 
-    let imc = calculImc(poids.value, valeursTaille);
+    console.log(imc);
+
+    
+    
 
     switch (true) {
         case imc<16.5:
@@ -74,35 +81,50 @@ function affichageImc() {
             break;
     }
 
-    /* */
+    /* on vérifie si les cases sont bien remplies */
+
 
     if(poids.value == 0) {
-        poids.style.borderColor = "red";
         valeurs.innerHTML = "vous devez remplir la case poids";
-        setColor("255, 0, 0", "0.2");
+       
     } else {
         poids.style.borderColor = "#2bd887";
     }
 
+
+
     if(taille.value == 0) {
-        taille.style.borderColor = "red";
         valeurs.innerHTML = "vous devez remplir la case taille";
-        setColor("255, 0, 0", "0.2");
+
     } else {
         taille.style.borderColor = "#2bd887";
     }
+
+
 
     if(poids.value == 0 && taille.value == 0) {
         poids.style.borderColor = "red";
         taille.style.borderColor = "red";
         valeurs.innerHTML = "vous devez remplir la case poids et la case taille";
-        setColor("255, 0, 0", "0.2");
+
     }
 
-    /*    */
 
+    if(isNaN(taille.value / 10)) {
+        valeurs.innerHTML = "Vous ne pouvez mettre que des chiffres dans les cases";
+        taille.style.borderColor = "red";
+    }
+
+
+    if(isNaN(poids.value / 10)) {
+        valeurs.innerHTML = "Vous ne pouvez mettre que des chiffres dans les cases";
+        poids.style.borderColor = "red";
+
+    }
 
     
+
+    /* gestion de la position du curseur svg en fonction de l'imc calculé */
 
     if(imc >= 339/6) {
         triangle.setAttribute("points", [[1, -10], [1, 10], [21, 0]]);
